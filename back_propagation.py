@@ -56,11 +56,6 @@ class Back_Propagation():
 
         # -----------------------recalculamos pesos finales-------------------
                 nf.calcular_nuevos_pesos(error_red,salidas_ocultas)
-        print("Pesos ocultos actualizados: ")
-        for neurona in neuronas:
-            print(neurona.pesos)
-        print("Pesos finales actualizados: ")
-        print(nf.pesos)
         
         array=[]
         for i in range(len(self.entradas)):
