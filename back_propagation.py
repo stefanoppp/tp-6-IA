@@ -15,11 +15,11 @@ class Back_Propagation():
         iteraciones=int(input("Digite cantidad de iteraciones: "))
         
         neuronas=[]
-        # generamos neuronas ocultas con 7680 pesos c/u
+        
         for i in range(cant_neuronas):
             pesos_neuronales=[]
-            for j in range(7680):
-                peso_random=random.random()
+            for j in range(len(self.entradas[0])):
+                peso_random=random.uniform(-0.001,0.001)
                 pesos_neuronales.append(peso_random)
             n=Neurona_oculta(pesos_neuronales)
             neuronas.append(n)
@@ -56,7 +56,7 @@ class Back_Propagation():
 
         # -----------------------recalculamos pesos finales-------------------
                 nf.calcular_nuevos_pesos(error_red,salidas_ocultas)
-        
+            print("Iteracion numero ",iteracion)
         array=[]
         for i in range(len(self.entradas)):
             array.append([])
@@ -65,7 +65,7 @@ class Back_Propagation():
         for i in range(len(errores)):
             array[j].append(errores[i])
             j+=1
-            if j==10:
+            if j==len(self.salidas):
                 j=0
         for element in array:
             plt.plot(element)

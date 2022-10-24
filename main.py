@@ -14,7 +14,8 @@ def main():
       for value in pixel:
         intermedio.append(value[0])
     pixeles_fotos.append(intermedio)
-  
+  # entradas=[[1,0,0],[1,1,1],[0,1,1],[0,0,0],[0,0,1]]
+  # salidas_2=[1,0,0,0,1]
   back=Back_Propagation(pixeles_fotos,salidas)
   back.main()
 main()
